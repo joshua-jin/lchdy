@@ -1,7 +1,13 @@
 CFLAGS=-Wall -g
 
 clean:
-	rm -f ex1
-	rm -f ex3
+	rm -rf bin/
 
-all: clean ex1 ex3
+all: clean dir compile
+
+dir:
+	mkdir bin
+
+compile:
+	cc ex1.c -o bin/ex1
+	cc ex3.c -o bin/ex3
